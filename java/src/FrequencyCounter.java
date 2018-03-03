@@ -30,7 +30,7 @@ public class FrequencyCounter {
             NullPointerException, IllegalArgumentException {
         if (textString == null) {
             throw new NullPointerException("Are you sure that is a .txt file?");
-        }
+        }s
         //TODO is this the right usage of equals????
         if (textString.equals("")) {
             throw new IllegalArgumentException("The file you have passed doesn't have any words to analyse");
@@ -66,10 +66,10 @@ public class FrequencyCounter {
         return sortedWordCountMap;
     }
 
-    public static String findMaxKeyInMap(HashMap<String, Integer> map) {
+    public static String findMaxKeyInMap(HashMap<String, Integer> unsortedMap) {
         int maxValue = 0;
         String maxKey = new String();
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+        for (Map.Entry<String, Integer> entry : unsortedMap.entrySet()) {
             if ((int) entry.getValue() > maxValue) {
                 maxValue = entry.getValue();
                 maxKey = entry.getKey();
