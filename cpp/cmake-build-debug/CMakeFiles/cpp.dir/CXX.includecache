@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.cpp
+Main.h
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.h
+iostream
+-
+
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.h
+

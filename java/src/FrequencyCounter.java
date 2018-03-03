@@ -26,7 +26,15 @@ public class FrequencyCounter {
         //TODO write getUrlcontentAsString
     }
 
-    public static HashMap<String, Integer> analyseWordFrequency(String textString, int numElements) {
+    public static HashMap<String, Integer> analyseWordFrequency(String textString, int numElements) throws
+            NullPointerException, IllegalArgumentException {
+        if (textString == null) {
+            throw new NullPointerException("Are you sure that is a .txt file?");
+        }
+        //TODO is this the right usage of equals????
+        if (textString.equals("")) {
+            throw new IllegalArgumentException("The file you have passed doesn't have any words to analyse");
+        }
         HashMap<String, Integer> wordCountMap = textToCountMap(textString);
         HashMap<String, Integer> mostSeenMap = findMostPopular(wordCountMap, numElements);
         return mostSeenMap;
@@ -37,8 +45,8 @@ public class FrequencyCounter {
         String[] textArr = filteredTextString.split(" ");
         HashMap<String, Integer> countMap = new HashMap<String, Integer>();
         for (String word : textArr) {
-            int currentScore = countMap.get(word);
             if (countMap.containsKey(word)) {
+                int currentScore = countMap.get(word);
                 countMap.put(word, currentScore + 1);
             } else {
                 countMap.put(word, 1);
@@ -47,9 +55,27 @@ public class FrequencyCounter {
         return countMap;
     }
 
-    public static HashMap<String, Integer> findMostPopular(HashMap<String, Integer> wordCountMap, int numElements) {
-        return null;
-        //TODO write find Most Popular
+    public static HashMap<String, Integer> findMostPopular(HashMap<String, Integer> unsortedWordCountMap, int numElements) {
+        HashMap<String, Integer> sortedWordCountMap = new HashMap<String, Integer>();
+        for (int i = 0; i < numElements; i++) {
+            String topKey = findMaxKeyInMap(unsortedWordCountMap);
+            Integer topInteger = unsortedWordCountMap.get(topKey);
+            sortedWordCountMap.put(topKey, topInteger);
+            unsortedWordCountMap.remove(topKey);
+        }
+        return sortedWordCountMap;
+    }
+
+    public static String findMaxKeyInMap(HashMap<String, Integer> map) {
+        int maxValue = 0;
+        String maxKey = new String();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if ((int) entry.getValue() > maxValue) {
+                maxValue = entry.getValue();
+                maxKey = entry.getKey();
+            }
+        }
+        return maxKey;
     }
 
     public static String mapToString(HashMap<String, Integer> mostSeenMap) {
