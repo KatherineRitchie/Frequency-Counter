@@ -27,10 +27,12 @@ int main()
 
     std::cout << analyseWordFrequency(textString, 10) << std::endl;
     return 0;
+
 }
 
 string getUrlContentAsString(string filename) {
     return "";
+    
 }
 
 string analyseWordFrequency(string textString, int numElements) {
