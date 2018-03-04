@@ -13,33 +13,43 @@ using namespace std;
 using namespace std;
 
 int main();
-std::string getUrlContentAsString(std::string *filename);
-std::map<std::string, int>* analyseWordFrequency(std::map<std::string, int>, int numElements);
-map<string, int>* textToCountMap(string textString);
-map<string, int>* findMostPopular(map<string, int> unsortedMap, int numElements);
+std::string getUrlContentAsString(std::string filename);
+string analyseWordFrequency(string, int numElements);
+map<string, int> textToCountMap(string textString);
+map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements);
 string findMaxKeyInMap(map<string, int> unsortedMap);
 string mapToString(map<string, int> mostSeenMap);
 
 int main()
 {
+    string textString = "this this this is a string strign";
     std::cout << "Hello World!" << std::endl;
+
+    std::cout << analyseWordFrequency(textString, 10) << std::endl;
     return 0;
 }
 
-string getUrlContentAsString(string *filename) {
+string getUrlContentAsString(string filename) {
     return "";
 }
 
-std::map<std::string, int>* analyseWordFrequency(std::map<std::string, int>, int numElements) {
-    return new std::map<std::string, int>;
+string analyseWordFrequency(string textString, int numElements) {
+    map<string, int> unsortedCountMap = textToCountMap(textString);
+    map<string, int> mostPopularMap = findMostPopular(unsortedCountMap, numElements);
+    string resultsString = mapToString(mostPopularMap);
+    return resultsString;
 }
 
-map<string, int>* textToCountMap(string textString) {
-    return new map<string, int>;
+map<string, int> textToCountMap(string textString) {
+    map<string, int> resultMap;
+    resultMap.insert(std::pair<string, int>("test string", 5));
+    return resultMap;
 }
 
-map<string, int>* findMostPopular(map<string, int> unsortedMap, int numElements) {
-    return new map<string,int>;
+map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements) {
+    map<string, int> resultMap;
+    resultMap.insert(std::pair<string, int>("test string", 5));
+    return resultMap;
 }
 
 string findMaxKeyInMap(map<string, int> unsortedMap) {
@@ -47,5 +57,5 @@ string findMaxKeyInMap(map<string, int> unsortedMap) {
 }
 
 string mapToString(map<string, int> mostSeenMap) {
-
+    return string("blank");
 }
