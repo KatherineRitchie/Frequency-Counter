@@ -10,11 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16afffc3-3736-4f10-82d6-149c6704d15a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cpp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/cpp/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/cpp.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/cpp.dir/CXX.includecache" />
-      <change beforePath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/cpp.dir/src/Main.cpp.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/cpp.dir/src/Main.cpp.o" afterPath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/cpp.dir/src/Main.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cpp/cmake-build-debug/cpp" afterPath="$PROJECT_DIR$/cpp/cmake-build-debug/cpp" />
       <change beforePath="$PROJECT_DIR$/cpp/src/Main.cpp" afterPath="$PROJECT_DIR$/cpp/src/Main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
