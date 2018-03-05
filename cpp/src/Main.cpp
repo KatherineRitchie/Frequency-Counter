@@ -11,38 +11,44 @@
 using namespace std;
 #include <map>
 using namespace std;
+#include <sstream>
+using namespace std;
 
-int main();
-std::string getUrlContentAsString(std::string filename);
-string analyseWordFrequency(string, int numElements);
-map<string, int> textToCountMap(string textString);
+int main(int argc, char* argv[]);
+string analyseWordFrequency(char* argv[], int numElements);
+map<string, int> arrToCountMap(char* argv[]);
 map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements);
 string findMaxKeyInMap(map<string, int> unsortedMap);
 string mapToString(map<string, int> mostSeenMap);
 
-int main()
+int main(int argc, char* argv[])
 {
     string textString = "this this this is a string strign";
     std::cout << "Hello World!" << std::endl;
 
-    std::cout << analyseWordFrequency(textString, 10) << std::endl;
+    std::cout << argc << std::endl;
+    for (int i = 0; i < argc; i++) {
+        std::cout << argv[i] << std::endl;
+    }
+
+    std::cout << analyseWordFrequency(argv, 10) << std::endl;
     return 0;
 
 }
 
-string getUrlContentAsString(string filename) {
-    return "";
-    
-}
-
-string analyseWordFrequency(string textString, int numElements) {
-    map<string, int> unsortedCountMap = textToCountMap(textString);
+string analyseWordFrequency(char* argv[], int numElements) {
+    string textString = "dfghjk";
+    map<string, int> unsortedCountMap = arrToCountMap(argv);
     map<string, int> mostPopularMap = findMostPopular(unsortedCountMap, numElements);
     string resultsString = mapToString(mostPopularMap);
     return resultsString;
 }
 
-map<string, int> textToCountMap(string textString) {
+map<string, int> arrToCountMap(char* argv[]) {
+    //std::istringstream textStringStream(textString);
+    //std::vector<string> textVector ((std::istream_iterator<std::string>(textStringStream)),
+                                    //std::istream_iterator<std::string>());
+
     map<string, int> resultMap;
     resultMap.insert(std::pair<string, int>("test string", 5));
     return resultMap;
