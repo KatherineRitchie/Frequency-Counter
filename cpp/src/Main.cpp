@@ -39,6 +39,11 @@ int main(int argc, char* argv[])
 string analyseWordFrequency(int argc, char* argv[], int numElements) {
     string textString = "dfghjk";
     map<string, int> unsortedCountMap = arrToCountMap(argc, argv);
+    for(auto elem : unsortedCountMap)
+    {
+        std::cout << elem.first << " " << elem.second << " " << std::endl;
+    }
+    std::cout << "max key in map is: " << findMaxKeyInMap(unsortedCountMap) << std::endl;
     map<string, int> mostPopularMap = findMostPopular(unsortedCountMap, numElements);
     string resultsString = mapToString(mostPopularMap);
     return resultsString;
@@ -64,7 +69,15 @@ map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements) 
 }
 
 string findMaxKeyInMap(map<string, int> unsortedMap) {
-    return "";
+    string maxKeyThusFar = "";
+    int maxValThusFar = 0;
+    for (auto elem : unsortedMap) {
+        if (elem.second > maxValThusFar) {
+            maxKeyThusFar = elem.first;
+            maxValThusFar = elem.second;
+        }
+    }
+    return maxKeyThusFar;
 }
 
 string mapToString(map<string, int> mostSeenMap) {
