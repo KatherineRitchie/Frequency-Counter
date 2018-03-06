@@ -1,5 +1,8 @@
-import oracle.jrockit.jfr.StringConstantPool;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,34 +13,32 @@ public class FrequencyCounter {
     //TODO write JavaDocs for all of this
 
     public static void main(String[] args) {
-        String inputString = "";
+        String inputUrl = "";
         try {
-            inputString = args[0];
+            inputUrl = args[0];
         } catch (IllegalArgumentException e) {
             System.out.print("Try using a valid URL");
             System.exit(1);
         }
 
-        System.out.println(mapToString(analyseWordFrequency(inputString, NUM_ELEMENTS_TO_DISPLAY)));
+        String inputString = Load.getUrlContentsAsString(inputUrl);
+
+        System.out.println(analyseWordFrequency(inputString, NUM_ELEMENTS_TO_DISPLAY));
     }
 
-    public static String getUrlContentAsString(String filename) throws IllegalArgumentException {
-        return null;
-        //TODO write getUrlcontentAsString
-    }
-
-    public static HashMap<String, Integer> analyseWordFrequency(String textString, int numElements) throws
+    public static String analyseWordFrequency(String textString, int numElements) throws
             NullPointerException, IllegalArgumentException {
         if (textString == null) {
             throw new NullPointerException("Are you sure that is a .txt file?");
-        }s
+        }
         //TODO is this the right usage of equals????
         if (textString.equals("")) {
             throw new IllegalArgumentException("The file you have passed doesn't have any words to analyse");
         }
         HashMap<String, Integer> wordCountMap = textToCountMap(textString);
-        HashMap<String, Integer> mostSeenMap = findMostPopular(wordCountMap, numElements);
-        return mostSeenMap;
+        //HashMap<String, Integer> mostSeenMap = findMostPopular(wordCountMap, numElements);
+        //return mostSeenMap;
+        return findMostPopular(wordCountMap, numElements);
     }
 
     public static HashMap<String, Integer> textToCountMap(String textString) {
@@ -55,6 +56,7 @@ public class FrequencyCounter {
         return countMap;
     }
 
+    /*
     public static HashMap<String, Integer> findMostPopular(HashMap<String, Integer> unsortedWordCountMap, int numElements) {
         HashMap<String, Integer> sortedWordCountMap = new HashMap<String, Integer>();
         for (int i = 0; i < numElements; i++) {
@@ -64,8 +66,26 @@ public class FrequencyCounter {
             unsortedWordCountMap.remove(topKey);
         }
         return sortedWordCountMap;
+    }*/
+
+    public static String findMostPopular(HashMap<String, Integer> unsortedWordCountMap, int numElements) {
+        HashMap<String, Integer> sortedWordCountMap = new HashMap<String, Integer>();
+        StringBuilder sortedOutputSb = new StringBuilder();
+        sortedOutputSb.append(String.format("The most frequent %s words are:\n", numElements));
+        for (int i = 0; i < numElements; i++) {
+            String topKey = findMaxKeyInMap(unsortedWordCountMap);
+            Integer topInteger = unsortedWordCountMap.get(topKey);
+            sortedOutputSb.append(String.format("%s. %s : %s \n", i + 1, topKey, topInteger));
+            unsortedWordCountMap.remove(topKey);
+        }
+        return sortedOutputSb.toString();
     }
 
+    /**
+     * Returns a the key of the element in the map with the highest value.
+     * @param unsortedMap
+     * @return String key
+     */
     public static String findMaxKeyInMap(HashMap<String, Integer> unsortedMap) {
         int maxValue = 0;
         String maxKey = new String();
@@ -78,6 +98,11 @@ public class FrequencyCounter {
         return maxKey;
     }
 
+    /**
+     * Converts a hashMap into a human readable string.
+     * @param mostSeenMap HashMap<String, Integer> of values to be presented to user
+     * @return String describing map
+     */
     public static String mapToString(HashMap<String, Integer> mostSeenMap) {
         StringBuilder outputSb = new StringBuilder();
         int score = 1;
