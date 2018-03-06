@@ -1,8 +1,3 @@
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-
-import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,8 +5,10 @@ public class FrequencyCounter {
 
     public static final int NUM_ELEMENTS_TO_DISPLAY = 10;
 
-    //TODO write JavaDocs for all of this
-
+    /**
+     * This program accepts a url of a .txt file and prints out information about the most frequent ten words.
+     * @param args url of .txt file
+     */
     public static void main(String[] args) {
         String inputUrl = "";
         try {
@@ -20,32 +17,44 @@ public class FrequencyCounter {
             System.out.print("Try using a valid URL");
             System.exit(1);
         }
-
         String inputString = Load.getUrlContentsAsString(inputUrl);
-
         System.out.println(analyseWordFrequency(inputString, NUM_ELEMENTS_TO_DISPLAY));
     }
 
+    /**
+     * This function accepts a string and print out the most frequently appearing words.
+     * @param textString contents of file
+     * @param numElements number of most frequent words to display
+     * @return String of user description of most frequent words
+     * @throws NullPointerException if the file passed is not a .txt file
+     * @throws IllegalArgumentException if the file is empty and thus cannot be analysed
+     */
     public static String analyseWordFrequency(String textString, int numElements) throws
             NullPointerException, IllegalArgumentException {
         if (textString == null) {
             throw new NullPointerException("Are you sure that is a .txt file?");
         }
-        //TODO is this the right usage of equals????
         if (textString.equals("")) {
             throw new IllegalArgumentException("The file you have passed doesn't have any words to analyse");
         }
         HashMap<String, Integer> wordCountMap = textToCountMap(textString);
-        //HashMap<String, Integer> mostSeenMap = findMostPopular(wordCountMap, numElements);
-        //return mostSeenMap;
         return findMostPopular(wordCountMap, numElements);
     }
 
+    /**
+     * Converts string into a hashmap counting all instances of that word
+     * @param textString string of text
+     * @return HashMap<String, Integer> with word as key and frequency as value.
+     */
     public static HashMap<String, Integer> textToCountMap(String textString) {
-        String filteredTextString = textString.replaceAll("[\\D]|[\\S]|[\\W]", "");
-        String[] textArr = filteredTextString.split(" ");
+        String filteredTextString = textString.toLowerCase();
+        filteredTextString = filteredTextString.replaceAll("[^a-zA-Z\\s-']", "");
+        String[] textArr = filteredTextString.split("\\s+");
         HashMap<String, Integer> countMap = new HashMap<String, Integer>();
         for (String word : textArr) {
+            if (word.equals("")) {
+                continue;
+            }
             if (countMap.containsKey(word)) {
                 int currentScore = countMap.get(word);
                 countMap.put(word, currentScore + 1);
@@ -56,20 +65,16 @@ public class FrequencyCounter {
         return countMap;
     }
 
-    /*
-    public static HashMap<String, Integer> findMostPopular(HashMap<String, Integer> unsortedWordCountMap, int numElements) {
-        HashMap<String, Integer> sortedWordCountMap = new HashMap<String, Integer>();
-        for (int i = 0; i < numElements; i++) {
-            String topKey = findMaxKeyInMap(unsortedWordCountMap);
-            Integer topInteger = unsortedWordCountMap.get(topKey);
-            sortedWordCountMap.put(topKey, topInteger);
-            unsortedWordCountMap.remove(topKey);
-        }
-        return sortedWordCountMap;
-    }*/
-
+    /**
+     * Creates a string describing the most popular elements in the map passed
+     * @param unsortedWordCountMap map of string, int values describing word counts
+     * @param numElements number of top-elements to display
+     * @return String description
+     */
     public static String findMostPopular(HashMap<String, Integer> unsortedWordCountMap, int numElements) {
-        HashMap<String, Integer> sortedWordCountMap = new HashMap<String, Integer>();
+        if (numElements > unsortedWordCountMap.size()) {
+            numElements = unsortedWordCountMap.size();
+        }
         StringBuilder sortedOutputSb = new StringBuilder();
         sortedOutputSb.append(String.format("The most frequent %s words are:\n", numElements));
         for (int i = 0; i < numElements; i++) {
@@ -82,7 +87,8 @@ public class FrequencyCounter {
     }
 
     /**
-     * Returns a the key of the element in the map with the highest value.
+     * Returns a the key of the element in the map with the highest value. If two elements have the same value, the
+     * one with the highest alphanumerical key is returned
      * @param unsortedMap
      * @return String key
      */
@@ -94,22 +100,11 @@ public class FrequencyCounter {
                 maxValue = entry.getValue();
                 maxKey = entry.getKey();
             }
+            //if two entries have the same value, the one that comes first in the alphabet is returned.
+            if ((int) entry.getValue() == maxValue && maxKey.compareToIgnoreCase(entry.getKey()) > 0) {
+                maxKey = entry.getKey();
+            }
         }
         return maxKey;
-    }
-
-    /**
-     * Converts a hashMap into a human readable string.
-     * @param mostSeenMap HashMap<String, Integer> of values to be presented to user
-     * @return String describing map
-     */
-    public static String mapToString(HashMap<String, Integer> mostSeenMap) {
-        StringBuilder outputSb = new StringBuilder();
-        int score = 1;
-        for (Map.Entry<String, Integer> element : mostSeenMap.entrySet()) {
-            outputSb.append(String.format("%s. %s : %s.", score, element.getKey(), element.getValue()));
-            score++;
-        }
-        return outputSb.toString();
     }
 }
