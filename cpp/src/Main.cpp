@@ -3,83 +3,84 @@
 //
 
 #include "Main.h"
-
-// 'Hello World!' program
-
 #include <iostream>
-#include<string>
-using namespace std;
 #include <map>
 using namespace std;
-#include <sstream>
-using namespace std;
+
+const int knumElements = 10;
 
 int main(int argc, char* argv[]);
-string analyseWordFrequency(int argc, char* argv[], int numElements);
-map<string, int> arrToCountMap(int argc, char* argv[]);
-map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements);
-string findMaxKeyInMap(map<string, int> unsortedMap);
-string mapToString(map<string, int> mostSeenMap);
+map<string, int> ArrToFreqMap(int argc, char **argv);
+string MostFreqToString(map<string, int> word_freq_map, int num_elements);
+string FindMaxKeyInMap(map<string, int> unsorted_map);
 
+/**
+ * This programe accepts a string piped as a command line and prints out the most popular ten words
+ * @param argc number of program arguments
+ * @param argv array of program arguments
+ * @return exit code 0 if successful
+ */
 int main(int argc, char* argv[])
 {
-    string textString = "this this this is a string strign";
-    std::cout << "Hello World!" << std::endl;
-
-    std::cout << argc << std::endl;
-    for (int i = 0; i < argc; i++) {
-        std::cout << argv[i] << std::endl;
-    }
-
-    std::cout << analyseWordFrequency(argc, argv, 10) << std::endl;
+    map<string, int> word_frequency_map = ArrToFreqMap(argc, argv);
+    string frequent_words_description = MostFreqToString(word_frequency_map, knumElements);
+    std::cout << frequent_words_description << std::endl;
     return 0;
-
 }
 
-string analyseWordFrequency(int argc, char* argv[], int numElements) {
-    string textString = "dfghjk";
-    map<string, int> unsortedCountMap = arrToCountMap(argc, argv);
-    for(auto elem : unsortedCountMap)
-    {
-        std::cout << elem.first << " " << elem.second << " " << std::endl;
-    }
-    std::cout << "max key in map is: " << findMaxKeyInMap(unsortedCountMap) << std::endl;
-    map<string, int> mostPopularMap = findMostPopular(unsortedCountMap, numElements);
-    string resultsString = mapToString(mostPopularMap);
-    return resultsString;
-}
-
-map<string, int> arrToCountMap(int argc, char* argv[]) {
-    map<string, int> resultMap;
+/**
+ * Creates a map with space split words from array and a count of their frequency.
+ * @param argc number of arguments in argv
+ * @param argv array* of strings
+ * @return map detailing frequency of words in map
+ */
+map<string, int> ArrToFreqMap(int argc, char **argv) {
+    map<string, int> freq_map;
     for (int i = 0; i < argc; i++) {
-        if (resultMap.count(argv[i])) {
-            int currentVal = resultMap.at(argv[i]);
-            resultMap.at(argv[i]) = currentVal + 1;
+        if (freq_map.count(argv[i])) {
+            int current_value = freq_map.at(argv[i]);
+            freq_map.at(argv[i]) = current_value + 1;
         } else {
-            resultMap.emplace(argv[i], 1);
+            freq_map.emplace(argv[i], 1);
         }
     }
-    return resultMap;
+    return freq_map;
 }
 
-map<string, int> findMostPopular(map<string, int> unsortedMap, int numElements) {
-    map<string, int> resultMap;
-    resultMap.insert(std::pair<string, int>("test string", 5));
-    return resultMap;
+/**
+ * Returns a string describing the n most popular words and their frequency, seperated by a colon and linebreak.
+ * @param word_freq_map map of words and their frequencies
+ * @param num_elements number of elements to display. Will display all words if numElements is larger than the number
+ * of words
+ * @return string describing most popular words.
+ */
+string MostFreqToString(map<string, int> word_freq_map, int num_elements) {
+    string most_freq_string = "";
+    if (num_elements > word_freq_map.size()) {
+        num_elements = word_freq_map.size();
+    }
+    for (int i = 0; i < num_elements; i++) {
+        string nextKey = FindMaxKeyInMap(word_freq_map);
+        int nextVal = word_freq_map.at(nextKey);
+        word_freq_map.erase(nextKey);
+        most_freq_string += "" + nextKey + " : " + std::to_string(nextVal) + "\n";
+    }
+    return most_freq_string;
 }
 
-string findMaxKeyInMap(map<string, int> unsortedMap) {
-    string maxKeyThusFar = "";
-    int maxValThusFar = 0;
-    for (auto elem : unsortedMap) {
-        if (elem.second > maxValThusFar) {
-            maxKeyThusFar = elem.first;
-            maxValThusFar = elem.second;
+/**
+ * Finds the strinng with the highest value.
+ * @param unsorted_map map<string, int> unsortedMap
+ * @return string with highest value in map
+ */
+string FindMaxKeyInMap(map<string, int> unsorted_map) {
+    string max_key_thus_far = "";
+    int max_val_thus_far = 0;
+    for (auto element : unsorted_map) {
+        if (element.second > max_val_thus_far) {
+            max_key_thus_far = element.first;
+            max_val_thus_far = element.second;
         }
     }
-    return maxKeyThusFar;
-}
-
-string mapToString(map<string, int> mostSeenMap) {
-    return string("blank");
+    return max_key_thus_far;
 }
