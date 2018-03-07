@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp" "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o"
-  "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp" "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o"
+  "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/Tests.cpp" "/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles/frequencycount_test.dir/test/Tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

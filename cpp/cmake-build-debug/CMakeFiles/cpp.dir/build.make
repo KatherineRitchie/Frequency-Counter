@@ -57,41 +57,67 @@ include CMakeFiles/cpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/cpp.dir/flags.make
 
-CMakeFiles/cpp.dir/src/Main.cpp.o: CMakeFiles/cpp.dir/flags.make
-CMakeFiles/cpp.dir/src/Main.cpp.o: ../src/Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp.dir/src/Main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/src/Main.cpp.o -c /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.cpp
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o: ../src/FrequencyCounter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o -c /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp
 
-CMakeFiles/cpp.dir/src/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/src/Main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.cpp > CMakeFiles/cpp.dir/src/Main.cpp.i
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp > CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.i
 
-CMakeFiles/cpp.dir/src/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/src/Main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/Main.cpp -o CMakeFiles/cpp.dir/src/Main.cpp.s
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp -o CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.s
 
-CMakeFiles/cpp.dir/src/Main.cpp.o.requires:
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.requires:
 
-.PHONY : CMakeFiles/cpp.dir/src/Main.cpp.o.requires
+.PHONY : CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.requires
 
-CMakeFiles/cpp.dir/src/Main.cpp.o.provides: CMakeFiles/cpp.dir/src/Main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/Main.cpp.o.provides.build
-.PHONY : CMakeFiles/cpp.dir/src/Main.cpp.o.provides
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.provides: CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.provides
 
-CMakeFiles/cpp.dir/src/Main.cpp.o.provides.build: CMakeFiles/cpp.dir/src/Main.cpp.o
+CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.provides.build: CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o
+
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o: ../src/FrequencyCounterFunctions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o -c /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp > CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.i
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp -o CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.s
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.requires
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.provides: CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.provides
+
+CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.provides.build: CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o
 
 
 # Object files for target cpp
 cpp_OBJECTS = \
-"CMakeFiles/cpp.dir/src/Main.cpp.o"
+"CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o" \
+"CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o"
 
 # External object files for target cpp
 cpp_EXTERNAL_OBJECTS =
 
-cpp: CMakeFiles/cpp.dir/src/Main.cpp.o
+cpp: CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o
+cpp: CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o
 cpp: CMakeFiles/cpp.dir/build.make
 cpp: CMakeFiles/cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,7 +125,8 @@ CMakeFiles/cpp.dir/build: cpp
 
 .PHONY : CMakeFiles/cpp.dir/build
 
-CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/src/Main.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o.requires
 
 .PHONY : CMakeFiles/cpp.dir/requires
 

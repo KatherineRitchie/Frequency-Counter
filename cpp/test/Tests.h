@@ -6,9 +6,9 @@
 #define CPP_TESTS_H
 
 
-class Tests {
+/*class Tests {
 
-};
+};*/
 
 
 #endif //CPP_TESTS_H

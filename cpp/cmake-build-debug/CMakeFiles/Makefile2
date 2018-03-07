@@ -60,13 +60,50 @@ CMAKE_SOURCE_DIR = /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/
 CMAKE_BINARY_DIR = /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/Test.dir
+
+# All Build rule for target.
+CMakeFiles/Test.dir/all:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Test"
+.PHONY : CMakeFiles/Test.dir/all
+
+# Include target in all.
+all: CMakeFiles/Test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Test.dir/rule
+
+# Convenience name for target.
+Test: CMakeFiles/Test.dir/rule
+
+.PHONY : Test
+
+# clean rule for target.
+CMakeFiles/Test.dir/clean:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/clean
+.PHONY : CMakeFiles/Test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/cpp.dir
 
 # All Build rule for target.
 CMakeFiles/cpp.dir/all:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/depend
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles --progress-num=4,5,6 "Built target cpp"
 .PHONY : CMakeFiles/cpp.dir/all
 
 # Include target in all.
@@ -76,7 +113,7 @@ all: CMakeFiles/cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/cpp.dir/rule

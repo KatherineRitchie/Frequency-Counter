@@ -6,27 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp
-FrequencyCounter.h
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.h
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp
+FrequencyCounterFunctions.hpp
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.hpp
 iostream
 -
 map
 -
+cctype
+-
 
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.h
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.hpp
+iostream
+-
+map
+-
+cctype
+-
 
 /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/Tests.cpp
-Tests.h
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/Tests.h
 catch.hpp
 /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/catch.hpp
 string
 /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/string
-../src/FrequencyCounter.cpp
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounter.cpp
-
-/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/Tests.h
+iostream
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/iostream
+map
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/map
+../src/FrequencyCounterFunctions.cpp
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.cpp
+../src/FrequencyCounterFunctions.hpp
+/Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/src/FrequencyCounterFunctions.hpp
 
 /Users/Kate/Documents/GitHub/frequencycount-KatherineRitchie/cpp/test/catch.hpp
 TargetConditionals.h

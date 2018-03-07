@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Test
+
+# Build rule for target.
+Test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test
+.PHONY : Test
+
+# fast build rule for target.
+Test/fast:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
+.PHONY : Test/fast
+
+#=============================================================================
 # Target rules for targets named cpp
 
 # Build rule for target.
@@ -123,32 +136,89 @@ cpp/fast:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/build
 .PHONY : cpp/fast
 
-src/Main.o: src/Main.cpp.o
+src/FrequencyCounter.o: src/FrequencyCounter.cpp.o
 
-.PHONY : src/Main.o
+.PHONY : src/FrequencyCounter.o
 
 # target to build an object file
-src/Main.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
+src/FrequencyCounter.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.o
+.PHONY : src/FrequencyCounter.cpp.o
 
-src/Main.i: src/Main.cpp.i
+src/FrequencyCounter.i: src/FrequencyCounter.cpp.i
 
-.PHONY : src/Main.i
+.PHONY : src/FrequencyCounter.i
 
 # target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
+src/FrequencyCounter.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.i
+.PHONY : src/FrequencyCounter.cpp.i
 
-src/Main.s: src/Main.cpp.s
+src/FrequencyCounter.s: src/FrequencyCounter.cpp.s
 
-.PHONY : src/Main.s
+.PHONY : src/FrequencyCounter.s
 
 # target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
+src/FrequencyCounter.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounter.cpp.s
+.PHONY : src/FrequencyCounter.cpp.s
+
+src/FrequencyCounterFunctions.o: src/FrequencyCounterFunctions.cpp.o
+
+.PHONY : src/FrequencyCounterFunctions.o
+
+# target to build an object file
+src/FrequencyCounterFunctions.cpp.o:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/FrequencyCounterFunctions.cpp.o
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.o
+.PHONY : src/FrequencyCounterFunctions.cpp.o
+
+src/FrequencyCounterFunctions.i: src/FrequencyCounterFunctions.cpp.i
+
+.PHONY : src/FrequencyCounterFunctions.i
+
+# target to preprocess a source file
+src/FrequencyCounterFunctions.cpp.i:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/FrequencyCounterFunctions.cpp.i
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.i
+.PHONY : src/FrequencyCounterFunctions.cpp.i
+
+src/FrequencyCounterFunctions.s: src/FrequencyCounterFunctions.cpp.s
+
+.PHONY : src/FrequencyCounterFunctions.s
+
+# target to generate assembly for a file
+src/FrequencyCounterFunctions.cpp.s:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/src/FrequencyCounterFunctions.cpp.s
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/src/FrequencyCounterFunctions.cpp.s
+.PHONY : src/FrequencyCounterFunctions.cpp.s
+
+test/Tests.o: test/Tests.cpp.o
+
+.PHONY : test/Tests.o
+
+# target to build an object file
+test/Tests.cpp.o:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/test/Tests.cpp.o
+.PHONY : test/Tests.cpp.o
+
+test/Tests.i: test/Tests.cpp.i
+
+.PHONY : test/Tests.i
+
+# target to preprocess a source file
+test/Tests.cpp.i:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/test/Tests.cpp.i
+.PHONY : test/Tests.cpp.i
+
+test/Tests.s: test/Tests.cpp.s
+
+.PHONY : test/Tests.s
+
+# target to generate assembly for a file
+test/Tests.cpp.s:
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/test/Tests.cpp.s
+.PHONY : test/Tests.cpp.s
 
 # Help Target
 help:
@@ -158,10 +228,17 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... Test"
 	@echo "... cpp"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
+	@echo "... src/FrequencyCounter.o"
+	@echo "... src/FrequencyCounter.i"
+	@echo "... src/FrequencyCounter.s"
+	@echo "... src/FrequencyCounterFunctions.o"
+	@echo "... src/FrequencyCounterFunctions.i"
+	@echo "... src/FrequencyCounterFunctions.s"
+	@echo "... test/Tests.o"
+	@echo "... test/Tests.i"
+	@echo "... test/Tests.s"
 .PHONY : help
 
 
